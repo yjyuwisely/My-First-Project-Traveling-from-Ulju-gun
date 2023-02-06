@@ -29,6 +29,7 @@ ul {
 header {
 	width: 100%; /*너비*/
 	height: 50px; /*높이*/
+/*	background:linear-gradient(45deg,#FFFFCC , #C8F9FE );*/ /*색상 넣는 건 생각중*/
 }
 	/*1.1 로고 영역 */
 	#logo {
@@ -54,6 +55,7 @@ header {
 		font-size:xx-small;
 		padding:10x;
 		margin: 5px 0 0 0;
+		background-color:white;opacity:0.8;
 	} 
 		#login > ul > li >a{
 			display:block; /*링크 텍스트는 블록으로*/
@@ -118,13 +120,19 @@ margin-bottom: 15px; }
 /* 상단, 세부 메뉴 눌렀을 때 효과 */
 .main > .menu  ul > li:hover > a {text-decoration: none; color:#6672FF}
 /*==================================================================*/
-  /*2. 이미지 슬라이드 쇼 영역*/
+
+ /*#totalSlides{   background:linear-gradient(45deg,#FFFFCC , #C8F9FE );
+ border-radius:10px 10px 35px 35px;
+ border:dotted red;
+ width:1200px;}
+ 
+ 		 /*2.  커다란 첫번째 이미지 슬라이드 쇼 영역*/
   .wrap ul,ol,li {list-style:none;}
   .wrap a{text-decoration:none;}
   .wrap{top:42px;margin-bottom:40px;width:100%;height:530px;
   overflow:hidden;position:relative;z-index:0;
   box-sizing:border-box;border-radius: 15px 15px 0 0;
-   background:linear-gradient(45deg,#FFFFCC , #C8F9FE );
+  background:linear-gradient(45deg,#FFFFCC , #C8F9FE );
 /*  background:linear-gradient(45deg,#FFFFCC , #DEFBFF ); /*전체 배경 색상*/
   }/*원래 #ac8bef , #2ddbdc 중간버전 #B099F1 , #C8F9FE 옅음 버전 #E2C4FF,#CAFFFF*/
   
@@ -199,24 +207,30 @@ background:#fff;
 	opacity:0.8;
 }*/
 /*=================================================================*/
-	/*2.1두번째 이미지 슬라이드 쇼 영역*/
+
+	/*2.1두번째 작은 이미지 슬라이드 쇼 영역*/
 	#secondTravelSlides{
-	float:left;
-	width:600px;height:700px; /*높이*/
+	width:1200px;height:350px; /*높이*/
 	/*display:flex; flex-direction: row;*/
-	background:linear-gradient(135deg,#FFFFCC , #DFFBEE); /*전체 네모 배경 조정 위 배경 색상과 똑같게 됨*/
-	border-radius: 0 0 0 35px; /*왼쪽 하단 둥그랗게*/
+	
 }
-/* 두번째 하단 슬라이드 쇼 (여행 설명) */
-#BottomTravelSlides{
-	height:350px;
-	border-radius: 0 0 0 25px;
+/* 왼쪽 슬라이드 쇼 (여행 설명) */
+#leftTravelSlides{
+	float:left;
+	background:linear-gradient(135deg,#FFFFCC , #DFFBEE); /*전체 네모 배경 조정 위 배경 색상과 똑같게 됨*/
+	border-radius: 0 0 0 45px; /*왼쪽 하단 둥그랗게*/
+}
+/* 오른쪽 슬라이드 쇼 (여행 설명) */
+#rightTravelSlides{
+	float:right; 
+	background:linear-gradient(45deg, #E0FBEE, #EBFDE1, #DFFBEE); /*전체 네모 배경 조정 위 배경 색상과 똑같게 됨*/
+	border-radius: 0 0 45px 0; /*왼쪽 하단 둥그랗게*/
 }
 /*=================================================================*/
-	/* 전체 네모 그라데이션 배경 조정 */ 
+	/* 전체  배경 조정 */ 
 .blog-slider {	
-  width: 600px;  height: 350px;
-  position: relative; 
+	width: 600px;  height: 320px;
+  position: relative;
   /*max-width: 800px;*/
   margin: auto;  padding: 25px;
     /* 45, 135, 225, 315 */
@@ -410,7 +424,7 @@ background:#fff;
 	color:navy;
 /*	color:#6672FF ;*/
 /*  color: #4e4a67;*/
- margin: 0 0 10px 5px;
+ margin: 0 0 30px 5px;
   line-height: 1.5;
   text-align:justify;
   font-size: 70%;
@@ -426,7 +440,7 @@ background:#fff;
   background:linear-gradient(135deg,#E5FFCC 20%, #BCECFF 74%);
   /*background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);*/
   padding: 8px 18px; /* padding: 15px 35px; */
-  margin: 0 0 0 50px; /*위치 조정*/
+  margin: 0 0 0 60px; /*위치 조정*/
   border-radius: 50px;   
   color: navy;/*#ac8bef;*//*color: #fff;*/
   /*box-shadow: 0px 14px 80px rgba(252, 56, 56, 0.4);*/ /*그림자 효과*/
@@ -435,7 +449,7 @@ background:#fff;
   justify-content: center;
   text-align: center;
   letter-spacing: 1px;
-  /*border:1px solid #fff;*/border:solid 0.5px #C8F9FE;
+  border:solid 0.5px #C8F9FE;/*border:1px solid #fff;*/
   font-size:70%;
 }
 @media screen and (max-width: 576px) {
@@ -448,11 +462,11 @@ background:#fff;
   left: 0;
   width: 100%;
 }
-			/* . . . . 버튼 */ 
+			/* 동그라미  . . 버튼 */ 
 .blog-slider__pagination { 
   position: absolute;
   z-index: 21;
-  right: 135px; left: auto !important;  /*좌우 이동*/
+  right: 435px; left: auto !important;  /*좌우 이동*/
   width: 11px !important;
   text-align: center;
    top: 250px; bottom: 0 !important;
@@ -482,14 +496,14 @@ background:#fff;
   height: 11px;
   display: block;
   border-radius: 10px;
-  background: #062744;
-  opacity: 0.2;
+  background: #eee;/*진회색 #062744*/
+  opacity: 0.8;
   transition: all .3s;
 }
-/*오른쪽 동그란 버튼 색상*/
+/*동그라미 버튼 . . 색상*/
 .blog-slider__pagination .swiper-pagination-bullet-active {
   opacity: .8;
- background:#6672FF; /* background: #fd3838; */
+ background:#BCECFF;/*보라색 #6672FF; /* background: #fd3838; */
   /*height: 10px;*/ /*height: 30px;*/ /*동그란 원으로 바뀜*/
   box-shadow: 0px 0px 20px rgba(252, 56, 56, 0.3);
   bottom:10px;
@@ -549,6 +563,6 @@ footer{
 	position:relative; 
 	width: 1200px; /*너비*/
 	text-align:center;
-	font-size:50%;
+	font-size:40%;
 }
 /*==================================================================*/
