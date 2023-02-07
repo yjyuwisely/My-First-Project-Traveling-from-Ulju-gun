@@ -44,6 +44,7 @@ header {
 		width: 170px; /*너비*/
 		height: auto; /*높이*/
 		margin:0;
+		
 }
 /*==================================================================*/
 	/*1.2 로그인, 회원가입, ENGLISH, 오늘의 날씨 */
@@ -52,7 +53,7 @@ header {
 		width: 65px; /*너비*/ height: 20px; 
 		border: solid 1px #ECEEFF ; 	border-radius:10px;
 		float: right;text-decoration:none;display:inline;
-		font-size:xx-small;
+		font-size:12px;
 		padding:10x;
 		margin: 5px 0 0 0;
 		background-color:white;opacity:0.8;
@@ -103,16 +104,18 @@ color:navy;}
 }
 .row{position:absolute;}
 
-/* (여기가 중요! ) 세부 메뉴 크기 조정 */
-.main .menu  > ul:hover ul {font-size:medium;height: 150px;/* (중요!)세로 길이 조절*/
+		/* (여기가 중요! ) 세부 메뉴 크기 조정 */
+.main .menu  > ul:hover ul {
+font-size:17px;height: 150px;/* (중요!)세로 길이 조절*/
 transform: translateX(0);
 background-color:white;
 opacity:.8;} /*텍스트가 보인다. */
 
-/* 상단 메인 메뉴만 */
-.main > .menu  > ul > li > a {color: navy; text-decoration: none; 
-font-size: 1.1rem; font-weight:bold;
-margin-bottom: 15px; }
+		/* 상단 메인 메뉴만 (텍스트 크기 조정 가능) */
+.main > .menu  > ul > li > a {
+color: navy; text-decoration: none; 
+font-size: 21px; font-weight:bold;
+margin-bottom: 10px; }
 
 /* 전체 각각의 칸 */
 .main > .menu  > ul > li > ul > li > a {color: navy; margin: 15px;} /*세부 메뉴 폰트 변경*/
@@ -136,12 +139,24 @@ margin-bottom: 15px; }
 /*  background:linear-gradient(45deg,#FFFFCC , #DEFBFF ); /*전체 배경 색상*/
   }/*원래 #ac8bef , #2ddbdc 중간버전 #B099F1 , #C8F9FE 옅음 버전 #E2C4FF,#CAFFFF*/
   
-  		/*슬라이드쇼 좌측 상단의 문자 (한글+영어)*/
-  .wrap h1{font-weight:normal;font-size:medium;font-family:'IBM Plex Sans KR'; color:#6672FF ;
+  
+ 				 /*슬라이드 쇼 내의 타이틀과 내용*/
+  .wrap .con h3{font-size:21px;}
+  .wrap .con p{font-size:14px;}
+  
+  				/*슬라이드쇼 좌측 상단의 울주군 Ulju-gun 문자 (한글+영어)*/
+  .wrap h1{
+  font-size:14px;font-weight:normal;
+  font-family:'IBM Plex Sans KR'; color:#6672FF ;
   letter-spacing:1px;position:absolute;left:10px;top:10px;}
+ 
   .wrap h1 span{opacity:0.8;font-family:'IBM Plex Sans KR'}
-  .wrap h2{font-weight:normal;font-size:small;font-family:"orbitron"; color:#6672FF;
+  
+  .wrap h2{
+  font-size:12px;font-weight:normal;
+  font-family:"orbitron"; color:#6672FF;
   letter-spacing:1px;position:absolute;left:10px;top:30px;}
+ 
   .wrap h2 span{opacity:0.8;font-family:"orbitron"}
   
   	  /*재생, 일시정지 버튼 */
@@ -210,7 +225,7 @@ background:#fff;
 
 	/*2.1두번째 작은 이미지 슬라이드 쇼 영역*/
 	#secondTravelSlides{
-	width:1200px;height:350px; /*높이*/
+	width:1200px;height:320px; /*높이*/
 	/*display:flex; flex-direction: row;*/
 	
 }
@@ -402,18 +417,19 @@ background:#fff;
   transform: translateY(25px);
   transition: all .4s;
 }
-/* 작은 텍스트 제목*/
+		/* 투어 작은 텍스트 제목*/
 .blog-slider__code {
   color: #807CA6;/*#7b7992;*/
   text-align:center;
   margin-bottom: 10px;
   display: block;
   font-weight: 500;
+  font-size:14px;
 }
-/* 텍스트 제목 */
+		/* 투어 텍스트 제목 */
 .blog-slider__title {
 	text-align:center;
-  font-size: 18px;
+  font-size: 21px;
   font-weight: 700;
   /*color: #0d0925;*/
   color: navy;
@@ -427,30 +443,29 @@ background:#fff;
  margin: 0 0 30px 5px;
   line-height: 1.5;
   text-align:justify;
-  font-size: 70%;
+  font-size: 14px;
    padding:10px; 
 }
 
 			/*자세히 알아보기 버튼*/
 .blog-slider__button {
-  display: inline-flex;
-  /* 아주 옅은 연보라색: #ECEEFF *//* 살짝 더 짙은 연보라색: #CCCCFF */
-/* 로고의 밝은 보라색 #6672FF *//* 로고의 옅은 하늘색 #BCECFF*/
-/* 형광 연보라 #ac8bef *//* 형광 하늘 #2ddbdc */
+  font-size:13px;
+  color: navy;/*#ac8bef;*//*color: #fff;*/
+  /*box-shadow: 0px 14px 80px rgba(252, 56, 56, 0.4);*/ /*그림자 효과*/
+  text-decoration: none;
+  font-weight: bold; /*500*/
+  text-align: center;
+  letter-spacing: 1px;
+  	
   background:linear-gradient(135deg,#E5FFCC 20%, #BCECFF 74%);
   /*background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);*/
   padding: 8px 18px; /* padding: 15px 35px; */
   margin: 0 0 0 60px; /*위치 조정*/
   border-radius: 50px;   
-  color: navy;/*#ac8bef;*//*color: #fff;*/
-  /*box-shadow: 0px 14px 80px rgba(252, 56, 56, 0.4);*/ /*그림자 효과*/
-  text-decoration: none;
-  font-weight: 500;
-  justify-content: center;
-  text-align: center;
-  letter-spacing: 1px;
   border:solid 0.5px #C8F9FE;/*border:1px solid #fff;*/
-  font-size:70%;
+  
+  display: inline-flex;
+  justify-content: center;
 }
 @media screen and (max-width: 576px) {
   .blog-slider__button {
@@ -563,6 +578,7 @@ footer{
 	position:relative; 
 	width: 1200px; /*너비*/
 	text-align:center;
-	font-size:40%;
+	font-size:12px;
+	font-color:#404040;
 }
 /*==================================================================*/
