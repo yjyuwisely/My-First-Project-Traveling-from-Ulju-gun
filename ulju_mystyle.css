@@ -233,13 +233,13 @@ background:#fff;
 #leftTravelSlides{
 	float:left;
 	background:linear-gradient(135deg,#FFFFCC , #DFFBEE); /*전체 네모 배경 조정 위 배경 색상과 똑같게 됨*/
-	border-radius: 0 0 0 45px; /*왼쪽 하단 둥그랗게*/
+	/*border-radius: 0 0 0 45px; /*왼쪽 하단 둥그랗게*/
 }
 /* 오른쪽 슬라이드 쇼 (여행 설명) */
 #rightTravelSlides{
 	float:right; 
 	background:linear-gradient(45deg, #E0FBEE, #EBFDE1, #DFFBEE); /*전체 네모 배경 조정 위 배경 색상과 똑같게 됨*/
-	border-radius: 0 0 45px 0; /*왼쪽 하단 둥그랗게*/
+	/*border-radius: 0 0 45px 0; /*왼쪽 하단 둥그랗게*/
 }
 /*=================================================================*/
 	/* 전체  배경 조정 */ 
@@ -345,7 +345,9 @@ background:#fff;
   /* 아주 옅은 연보라색: #ECEEFF *//* 살짝 더 짙은 연보라색: #CCCCFF */
   /* 연노랑색 #FFFFCC *//* 연하늘색 #C8F9FE */
   /* 45, 135, 225, 315 */
-  background-image:linear-gradient(135deg,#FFFFCC, #C8F9FE ); /*두번째 슬라이드 배경 색상*/
+ /*마우스 돌릴 때 효과*/
+ 
+  background-image:linear-gradient(225deg,#FFFFCC, #C8F9FE ); /*두번째 슬라이드 배경 색상*/
   /* background-image: linear-gradient(147deg, #E5FFCC 0%, #C8F9FE 74%);/*이미지 뒷면 필터*/
   /*background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);/*이미지 뒷면 필터*/
     /*box-shadow: 0 13px 30px 0  rgba(255,255,153, 0.2); /*그림자 효과*/
@@ -531,46 +533,216 @@ background:#fff;
   } 
 }
 /*==================================================================*/
-		/*2.2 퀵 링크 (여행 길라잡이)아이콘 영역 (6개)*/
+		/*3. 총 6장의 가로형 카드들*/
+/*위로 올라오는 슬라이드 효과*/		
+:root {
+  --d: 700ms;
+  --e: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
 #links{
 	display:table;
-	width: 600px; /*너비*/ height:700px;
+	width: 1200px; /*너비*/ height:260px; /*높이*/
+	background:linear-gradient(45deg,#FFFFCC , #E0FBED, #E7FCE5);
+	border-radius: 0 0 45px 45px;
+	padding:0 0 10px 0;
 }
-/*2.2.1 첫번째 줄 아이콘 3개 (교통, 숙박, 음식점 정보)*/
-		#firstRowLinks{
-			display:table-row;
-			text-align:center; 
-} 
-		#firstRowLinks > li {
-			display:table-cell;
-			text-align:center; border:dotted red;
-			width:33.33%;
-} 
-		#firstRowLinks > li >a{
-			display:block; /*링크 텍스트는 블록으로*/
-			color: black; /*폰트 색상*/
-			/*font-weight: 폰트 굵기*/
-			text-shadow: 0 1px #07c; /*그림자 추가*/
-			text-decoration:none; /*밑줄을 없앤다*/
-	}
 
-/*2.2.2 두번째 줄 아이콘 3개 (축제 대회, 특산물, 레저 스포츠)*/
-			#secondRowLinks{
-			display:table-row;
-			text-align:center; 
-} 
-			#secondRowLinks > li {
-			display:table-cell;
-			text-align:center; border:dotted red;
-			width:33.33%;
-	} 
-		#secondRowLinks > li >a{
-			display:block; /*링크 텍스트는 블록으로*/
-			color: black; /*폰트 색상*/
-			/*font-weight: 폰트 굵기*/
-			text-shadow: 0 1px #07c; /*그림자 추가*/
-			text-decoration:none; /*밑줄을 없앤다*/
-	}
+/* 왼쪽 슬라이드 쇼 (여행 설명) */
+/*#leftCardSlides{
+   display: flex;
+   width:600px;
+	background:linear-gradient(135deg,#FFFFCC , #DFFBEE); /*전체 네모 배경 조정 위 배경 색상과 똑같게 됨*/
+	/*border-radius: 0 0 0 45px; /*왼쪽 하단 둥그랗게*/
+/*}
+/* 오른쪽 슬라이드 쇼 (여행 설명) */
+/*#rightCardSlides{
+  display: flex;
+   width:600px;
+	background:linear-gradient(45deg, #E0FBE
+
+
+/* 6장 카드의 카드 높이, 너비 */
+.page-content {
+	/*6장이 가로로 정렬됨*/
+  display: flex; /*display: grid;*/ 
+  grid-gap: 1rem;
+  padding: 1rem;
+  width: 1200px; /*max-width: 1200px;*/
+  margin: 0 auto;
+  font-family: var(--font-sans);
+}
+@media (min-width: 600px) {
+  .page-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 800px) {
+  .page-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+	/* 각각의 카드 */
+.card {
+  border-radius:65px; /*카드의 모서리 둥글게*/
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  color: whitesmoke;
+  background-color: whitesmoke;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 600px) {
+  .card {
+    height: 220px; /*카드의 높이 조정*/
+  }
+}
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  background-size: cover;
+  background-position: 0 0;
+  transition: transform calc(var(--d) * 1.5) var(--e);
+  pointer-events: none;
+}
+.card:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  pointer-events: none;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);
+  transform: translateY(-50%);
+  transition: transform calc(var(--d) * 2) var(--e);
+}
+				/*각 카드의 이미지*/
+.card:nth-child(1):before {
+  background-image: url(https://i.imgur.com/eYJbxHK.jpg);
+}
+.card:nth-child(2):before {
+  background-image: url(https://i.imgur.com/MPxCygG.jpg);
+}
+.card:nth-child(3):before {
+  background-image: url(https://images.unsplash.com/photo-1545243424-0ce743321e11?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+}
+.card:nth-child(4):before {
+  background-image: url(https://images.unsplash.com/photo-1531306728370-e2ebd9d7bb99?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+}
+.card:nth-child(5):before {
+  background-image: url(https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+}
+.card:nth-child(6):before {
+  background-image: url(https://images.unsplash.com/photo-1533903345306-15d1c30952de?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+}
+
+/* 전체 글자들 */
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  transition: transform var(--d) var(--e);
+  z-index: 1;
+}
+.content > * + * {
+  margin-top: 1rem;
+}
+
+		/* 타이틀 */
+.title {
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 1.2;
+  width:200px;
+}
+
+/* 내부 설명글 */
+.copy {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  /*font-style: italic;*/
+  text-align: center;
+  line-height: 1.35;
+}
+
+.btn {
+  cursor: pointer;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  border: none;
+}
+.btn:hover {
+  background-color: #0d0d0d;
+}
+.btn:focus {
+  outline: 1px dashed yellow;
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (min-width: 600px) {
+  .card:after {
+    transform: translateY(0);
+  }
+
+  .content {
+    transform: translateY(calc(100% - 4.5rem));
+  }
+  .content > *:not(.title) {
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+  }
+
+  .card:hover,
+.card:focus-within {
+    align-items: center;
+  }
+  .card:hover:before,
+.card:focus-within:before {
+    transform: translateY(-4%);
+  }
+  .card:hover:after,
+.card:focus-within:after {
+    transform: translateY(-50%);
+  }
+  .card:hover .content,
+.card:focus-within .content {
+    transform: translateY(0);
+  }
+  .card:hover .content > *:not(.title),
+.card:focus-within .content > *:not(.title) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc(var(--d) / 8);
+  }
+
+  .card:focus-within:before, .card:focus-within:after,
+.card:focus-within .content,
+.card:focus-within .content > *:not(.title) {
+    transition-duration: 0s;
+  }
+}
+
 /*==================================================================*/
 /*4. 푸터 영역*/
 footer{
