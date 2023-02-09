@@ -9,7 +9,7 @@ img{width: 300px; /*너비*/
 	height: auto; /*높이*/
 	margin:150px 0 10px 0;}
 
-body{font-size:x-small;}
+body{font-size:16px;}
 
 /* 전체 로그인 폼 */
 #page-wrap{
@@ -19,16 +19,21 @@ body{font-size:x-small;}
 }
 
 /*이메일 주소*/
-input[id="email"]{width:460px; padding:0 4px; text-align:left;	height: 50px; margin: 0 0 4px 0; border: 2px solid #ECEEFF;border-radius:5px;}
+input[id="email"]{width:460px; padding:0 4px; text-align:left;	
+height: 50px; margin: 0 0 4px 0; border: 2px solid #ECEEFF;border-radius:5px;}
 /*비밀번호*/
-input[id="password"]{width:460px; padding:0 4px; text-align:left;	height: 50px; margin: 4px 2px; border: 2px solid #ECEEFF;border-radius:5px;}
+input[id="password"]{width:460px; padding:0 4px; text-align:left;	
+height: 50px; margin: 4px 2px; border: 2px solid #ECEEFF;border-radius:5px;}
+
 
 /* checkbox: 아이디 저장 */
 #SaveIdCheckbox{text-align:left;}
 
+
 /* 로그인 버튼 */
 #loginButton{width:471px;height:55px;margin:5px;
-text-align:center;font-size:150%;font-weight:bold;
+text-align:center;
+font-size:24px;font-weight:bold;
 color:navy;background-color:#ECEEFF;
 border-radius:10px;border: 1px solid #ac8bef;;
 cursor: pointer;}
@@ -45,3 +50,7 @@ footer{
 	margin: 0;
 	padding: 110px 0 0 0;
 }
+
+		/*input 클릭하면 효과 있다.*/
+input:focus{outline:none;/*input 박스를 클릭 했을떄 나오는 테두리 색상 없애기*/
+border:solid 2px #CCCCFF; box-shadow: 0 0 15px #ECEEFF;};

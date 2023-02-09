@@ -6,6 +6,9 @@
 </head>
 <link rel="stylesheet" href="css/ulju_login.css"> 
 
+<!-- jQuery 불러온다 -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
 <body>
 
 <!-- 전체를 묶는다. -->
@@ -17,13 +20,15 @@
 	<a href="ulju_myindex.html"><img src="image/logo2.png" alt="울주군 당일여행 로고"></a>
 
 <!-- 이메일 주소 -->
-<input type="text" name="email" id="email" placeholder="이메일 주소"> <!-- 내노트북: size="20" -->
+<input type="text"  class="box"  name="email" id="email" placeholder="이메일 주소" autofocus="autofocus"> <!-- 내노트북: size="20" -->
 <!-- 비밀번호 -->
-<input type="password" id="password" name="password" placeholder="비밀번호">
+<input type="password"  class="box"  id="password" name="password" placeholder="비밀번호">
 
+<!-- ###tabindex=0 적용되게 만들기 -->
 <!-- checkbox: 아이디 저장 -->
+<!-- ###개인정보 보호를 위해, 개인PC에서만 사용해주세요. 넣기### -->
 <div id = "SaveIdCheckbox">
-<label><input type="checkbox" id="SaveId" name="SaveId">아이디 저장</label>
+<input type="checkbox" id="SaveId" name="SaveId" tabindex="1">아이디 저장
 </div>
 
 <!-- 로그인 버튼 -->
@@ -43,5 +48,15 @@
 	<p>Ⓒ Day Trips from Ulju-gun. All Rights Reserved.</p>
 </footer>
 
+<script> 
+/* 눌렀을 때 색상 변경된다. */
+/*$('.box').on('click', function(e){
+	//  e.preventDefault();
+	  $(this).css('border-color', '#2ddbdc');
+	});
+*/
+function fnChangeBorder(boxId)
+{document.getElementById(boxId).style.border = "solid #AA00FF";}
+</script>
 </body>
 </html>
