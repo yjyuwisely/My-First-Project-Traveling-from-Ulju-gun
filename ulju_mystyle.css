@@ -341,7 +341,7 @@ background:#fff;
 		/* 정사각형 투어 사진 이미지 조정 */ 
 .blog-slider__img {
   width: 280px;  height: 280px;
-  flex-shrink: 0;
+  flex-shrink: 0; /*The element will not shrink*/
   /* 아주 옅은 연보라색: #ECEEFF *//* 살짝 더 짙은 연보라색: #CCCCFF */
   /* 연노랑색 #FFFFCC *//* 연하늘색 #C8F9FE */
   /* 45, 135, 225, 315 */
@@ -359,6 +359,24 @@ background:#fff;
   margin:3px;
   border:solid 0.5px #C8F9FE;
 }
+		/* 마우스 올렸을 때 이미지가 커진다.*/
+img {
+  max-width: 100%;
+}
+.blog-slider__img {
+   width: 280px;
+   margin: 0px auto;
+   overflow: hidden;
+}
+      
+.blog-slider__img img {
+  	transition: all 0.2s linear;
+}
+.blog-slider__img:hover img {
+  	transform: scale(1.5); /*확대 배수*/
+}
+		
+		
 .blog-slider__img:after {
   content: '';
   position: absolute;
@@ -395,6 +413,7 @@ background:#fff;
     height: 270px;
   }
 }
+
 		/*텍스트를 감싸는 전체 흰색 배경 */
 .blog-slider__content {
   padding: 15px 10px 15px 5px;
@@ -585,7 +604,7 @@ background:#fff;
 
 	/* 각각의 카드 */
 .card {
-  border-radius:65px; /*카드의 모서리 둥글게*/
+  border-radius:60px; /*카드의 모서리 둥글게*/
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -628,23 +647,29 @@ background:#fff;
   transition: transform calc(var(--d) * 2) var(--e);
 }
 				/*각 카드의 이미지*/
-.card:nth-child(1):before {
-  background-image: url(https://i.imgur.com/eYJbxHK.jpg);
+.card:nth-child(1):before {/*교통: 시티투어*/
+  background-image: url(https://i.imgur.com/eYJbxHK.jpg); 
 }
-.card:nth-child(2):before {
+.card:nth-child(2):before {/*숙박: 오션뷰 호텔*/
   background-image: url(https://i.imgur.com/MPxCygG.jpg);
+    background-position:5cm;
 }
-.card:nth-child(3):before {
-  background-image: url(https://images.unsplash.com/photo-1545243424-0ce743321e11?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+.card:nth-child(3):before {/*음식: 언양불고기*/
+  background-image: url(https://i.imgur.com/3eNIzp4.jpg);
+  background-position:7.1cm;
 }
-.card:nth-child(4):before {
-  background-image: url(https://images.unsplash.com/photo-1531306728370-e2ebd9d7bb99?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+.card:nth-child(4):before {/*축제 대회: 서머페스티벌*/
+  background-image: url(https://i.imgur.com/UmYABpx.jpg);
+  background-position: 7cm;
+  
 }
-.card:nth-child(5):before {
-  background-image: url(https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+.card:nth-child(5):before {/*전시관 박물관: 울산 전시컨벤션센터*/
+  background-image: url(https://i.imgur.com/kGD5o71.jpg);
 }
-.card:nth-child(6):before {
-  background-image: url(https://images.unsplash.com/photo-1533903345306-15d1c30952de?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+.card:nth-child(6):before {/*레저 스포츠: 클라이밍체험*/
+  background-image: url(https://i.imgur.com/Vuwhz3s.jpg);
+  background-size: 300px;
+  background-position: 6.5cm;
 }
 
 /* 전체 글자들 */
@@ -664,26 +689,30 @@ background:#fff;
 
 		/* 타이틀 */
 .title {
-  font-size: 25px;
+  font-size: 23px;
   font-weight: bold;
   line-height: 1.2;
+  padding:30px 0 0 0;
   width:200px;
+  text-shadow: 1px 1px 2px black;
 }
 
-/* 내부 설명글 */
+	/* 내부 설명글 */
 .copy {
   font-family: var(--font-serif);
-  font-size: 16px;
+  font-size: 14px;
   /*font-style: italic;*/
   text-align: center;
   line-height: 1.35;
+  width:160px;
+  text-shadow: 1px 1px 2px black;
 }
-
+/* 알아보기 버튼 */
 .btn {
   cursor: pointer;
   margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 16px;
+  /*padding: 0.75rem 1.5rem;*/
+  font-size: 15px;
   font-weight: bold;
   letter-spacing: 0.025rem;
   text-transform: uppercase;
@@ -695,7 +724,7 @@ background:#fff;
   background-color: #0d0d0d;
 }
 .btn:focus {
-  outline: 1px dashed yellow;
+  outline: 1px solid #C8F9FE;
   outline-offset: 3px;
 }
 
