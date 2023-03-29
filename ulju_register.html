@@ -4,14 +4,9 @@
 <meta charset="UTF-8">
 <title>울주군 당일여행 Day trips from Ulju-gun</title>
 <link rel="stylesheet" href="css/ulju_register.css">
-<!-- bootstrap: select option 왼쪽 정렬 위해 씀 -->
-<!--  
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />-->
-
-<!-- jQuery 불러온다 -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-<script> 
-
+<script src="js/ulju_register.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script><!-- jQuery 불러온다 -->
+<script>
 //jQuery toggle 이용: 개인정보 버튼 눌렀을 때 설명 3줄이 나오고 다시 버튼을 누르면 다시 설명이 숨겨진다.
 		//화살표: ⮝ up: &#11165, ⮟ down: &#11167 
 $(document).ready(function () {
@@ -22,7 +17,7 @@ $(document).ready(function () {
 			$("#infoValidButton").attr("value","⮝"); 
 	//.toggle()은 선택한 요소가 보이면 보이지 않게, 보이지 않으면 보이게 합니다.
  		  $("#infoValid").toggle();
-	}
+		}
 		else{ //그렇지 않으면 = 화살표가 위 방향 화살표 이면
 			//화살표는 아래 방향으로 바뀐다.
 			$("#infoValidButton").attr("value","⮟");
@@ -30,107 +25,47 @@ $(document).ready(function () {
 		}
   });
 }); 
+
+//전체 약관 동의
+function checkAll() {
+    if ($("#TermsOfService").is(':checked')) {
+        $("input[name=sub_TermsOfServiceRequired]").prop("checked", true);
+    } else {
+        $("input[type=checkbox]").prop("checked", false);
+    }
+}
+
+//선택 약관 동의
+function checkOptional() {
+    if ($("#TermsOfServiceOptional").is(':checked')) {
+        $("input[name=sub_TermsOfServiceOptional]").prop("checked", true);
+    } else {
+        $("input[type=checkbox]").prop("checked", false);
+    }
+}
+
+//이메일 수신 체크시 '(선택) 마케팅 정보 수신 동의' 동의 
+function checkOptionalEmail() {
+    if ($("#sub_TermsOfService6").is(':checked')) {
+        $("input[id=sub_TermsOfService5]").prop("checked", true);
+    } else {
+        $("input[type=checkbox]").prop("checked", false);
+    }
+}
+
+//SNS 수신 체크시 '(선택) 마케팅 정보 수신 동의' 동의 
+function checkOptionalSms() {
+    if ($("#sub_TermsOfService7").is(':checked')) {
+        $("input[id=sub_TermsOfService5]").prop("checked", true);
+    } else {
+        $("input[type=checkbox]").prop("checked", false);
+    }
+}
+//SMS 수신 체크시 선택 약관 동의
 </script>
-
-<!-- 정규식 검사 -->
-<script>
-function validchk(){//starts
-	// 폼 가져오기
-	// (1) 이메일
-	var email = document.getElementById("email");
-	var mailJ = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-
-	// (2) 비밀번호(특수문자 / 문자 / 숫자 포함 형태의 8~15자리 이내의 암호 정규식)
-	var password = document.getElementById("password");
-	var passJ = /^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
-	
-	// (2.1) 비밀번호 재확인
-	var pwVerified = document.getElementById("pwVerified");
-	
-	// (3) 이름(한글로 시작, 최소 2글자 최대 6글자)
-	var name = document.getElementById("name");
-	var nameJ = /^[가-힣]{2,6}$/;		
-
-	// (4) 연락처
-	var phone = document.getElementById("phone");
-	//0에서 9까지: 3~4글자, 0에서 9까지: 4글자 
-	var phoneJ = /^01([0|1|6|7|8|9]?)?([0-9]{3,4})?([0-9]{4})$/;
-	
-	// (5) 생년월일 
-	var bday = document.getElementById("bday");
-	//생년월일 8자리
-	var bdayJ = /^(19[0-9][0-9]|20\d{2})(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/;
-	
-	
-	// (1) 이름 유효성 검증
-	//if(nameJ.test(name.value))로 해도 같다. 
-	if(name.value.match(nameJ)){
-		document.getElementById("msgName").innerHTML = "이름 유효성 검증 완료입니다.";
-		document.getElementById("msgName").style.color ="green";
-	} else {
-		document.getElementById("msgName").innerHTML = "이름을 다시 입력하세요.";
-		document.getElementById("msgName").style.color = "red";
-		name.focus();
-		return false;
-	}
-	
-	// (2) 연락처 유효성 검증
-	if(phone.value.match(phoneJ)){
-		document.getElementById("msgPhone").innerHTML = "연락처 유효성 검증 완료입니다.";
-		document.getElementById("msgPhone").style.color ="green";
-	} else {
-		document.getElementById("msgPhone").innerHTML = "연락처를 다시 입력하세요.";
-		document.getElementById("msgPhone").style.color = "red";
-		phone.focus();
-		return false;
-	}
-	
-	// (3) 이메일 유효성 검증
-	if(email.value.match(mailJ)){
-		document.getElementById("msgEmail").innerHTML = "이메일 유효성 검증 완료입니다.";
-		document.getElementById("msgEmail").style.color ="green";
-	} else {
-		document.getElementById("msgEmail").innerHTML = "이메일을 다시 입력하세요.";
-		document.getElementById("msgEmail").style.color = "red";
-		email.focus();
-		return false;
-	}
-	
-	// (4) 비밀번호 유효성 검증
-	if(password.value.match(passJ)){
-		document.getElementById("msgPassword").innerHTML = "비밀번호 유효성 검증 완료입니다.";
-		document.getElementById("msgPassword").style.color ="green";
-	} else {
-		document.getElementById("msgPassword").innerHTML = "비밀번호를 다시 입력하세요.";
-		document.getElementById("msgPassword").style.color = "red";
-		password.focus();
-		return false;
-	}
-	
-	// (4.1) 비밀번호 재확인 (문자열이 일치하는지)
-	if (password.value == pwVerified.value){
-		document.getElementById("msgPwVerified").innerHTML = "비밀번호가 일치합니다.";
-		document.getElementById("msgPwVerified").style.color ="green";
-	} else {
-		document.getElementById("msgPwVerified").innerHTML = "비밀번호를 다시 입력하세요.";
-		document.getElementById("msgPwVerified").style.color = "red";
-		//pwVerified.focus();
-		//return false;
-		}
-	
-	// (5) 생년월일 유효성 검증
-	if(bday.value.match(bdayJ)){
-		document.getElementById("msgBday").innerHTML = "생년월일 유효성 검증 완료입니다.";
-		document.getElementById("msgBday").style.color ="green";
-	} else {
-		document.getElementById("msgBday").innerHTML = "생년월일을 다시 입력하세요.";
-		document.getElementById("msgBday").style.color = "red";
-		bday.focus();
-		return false;
-	}
-	}
-</script>
-
+<!-- bootstrap: select option 왼쪽 정렬 위해 씀 -->
+<!--  
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />-->
 </head>
 <body>
 <header>
@@ -224,22 +159,22 @@ function validchk(){//starts
 	<!-- ### tabindex=0 적용시키기 ### -->
 	<!-- 약관 전체 동의 -->
 	<div id ="TotalTermsOfService">
-		<label id="TermsOfService"><input type="checkbox" id ="TermsOfService" name="TermsOfService">(필수) 약관 전체 동의</label>
-		<label id="TermsOfService"><input type="checkbox" id ="TermsOfService" name="TermsOfService">(선택) 약관 전체 동의</label>
+		<input type="checkbox" id ="TermsOfService" name="TermsOfService" onclick="checkAll();">(필수) 약관 전체 동의
+		<input type="checkbox" id ="TermsOfServiceOptional" name="TermsOfServiceOptional" onclick="checkOptional();">(선택) 약관 전체 동의
 	</div>
 	<!-- 약관 세부 checkbox -->
 	<!-- ### 각 내용보기도 추가한다.### -->
 	<div class=box id = sub_TermsOfService tabindex=“0”>
 		<ul id=TotalSub>
-			<li><label><input type="checkbox" id="sub_TermsOfService1" name="sub_TermsOfService">(필수) 울주군  당일여행 이용약관 동의</label></li>
-			<li><label><input type="checkbox" id="sub_TermsOfService2" name="sub_TermsOfService">(필수) 만14세 이상 확인</label></li>
-			<li><label><input type="checkbox" id="sub_TermsOfService3" name="sub_TermsOfService">(필수) 개인정보 수집 및 이용 동의</label></li>
-			<li><label><input type="checkbox" id="sub_TermsOfService4" name="sub_TermsOfService">(선택) 개인정보 수집 및 이용 동의</label></li>
+			<li><label><input type="checkbox" id="sub_TermsOfService1" name="sub_TermsOfServiceRequired">(필수) 울주군  당일여행 이용약관 동의</label></li>
+			<li><label><input type="checkbox" id="sub_TermsOfService2" name="sub_TermsOfServiceRequired">(필수) 만14세 이상 확인</label></li>
+			<li><label><input type="checkbox" id="sub_TermsOfService3" name="sub_TermsOfServiceRequired">(필수) 개인정보 수집 및 이용 동의</label></li>
+			<li><label><input type="checkbox" id="sub_TermsOfService4" name="sub_TermsOfServiceOptional">(선택) 개인정보 수집 및 이용 동의</label></li>
 		<!-- 약관 checkbox: email, sms -->
-		<li><label><input type="checkbox" id="sub_TermsOfService5" name="sub_TermsOfService">(선택) 마케팅 정보 수신 동의</label>
+		<li><label><input type="checkbox" id="sub_TermsOfService5" name="sub_TermsOfServiceOptional">(선택) 마케팅 정보 수신 동의</label>
 			<div id = EmailSms tabindex=“0”>
-				<label><input type="checkbox" id="sub_TermsOfService6" name="sub_TermsOfService">이메일</label>
-				<label><input type="checkbox" id="sub_TermsOfService7" name="sub_TermsOfService">SMS</label>
+				<label><input type="checkbox" id="sub_TermsOfService6" name="sub_TermsOfServiceOptional" onclick="checkOptionalEmail();">이메일</label>
+				<label><input type="checkbox" id="sub_TermsOfService7" name="sub_TermsOfServiceOptional" onclick="checkOptionalSms();">SMS</label>
 			</div>
 		</li>
 		</ul>
