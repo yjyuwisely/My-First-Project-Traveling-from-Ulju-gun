@@ -92,6 +92,8 @@ input[id="infoValidRadio"]{position: relative; top:1px;} /*버튼과 텍스트�
 #TotalTermsOfService{font-size:17px;text-align:left;margin:0;font-weight:bold;padding:0;}
 #TermsOfService{font-weight: bold;}/*bold체*/
 input[id="TermsOfService"]{position: relative; top:2px;} /*체크박스 버튼과 텍스트의 높이를 조정한다*/
+#TermsOfServiceOptional{font-weight: bold;}/*bold체*/
+input[id="TermsOfServiceOptional"]{position: relative; top:2px;} /*체크박스 버튼과 텍스트의 높이를 조정한다*/
 
 /*약관 checkbox 옆 동의 1문장씩*/
 #TotalSub{font-size:17px;padding:0 10px 0 10px;}
