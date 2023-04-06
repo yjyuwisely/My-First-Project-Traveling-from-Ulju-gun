@@ -1,0 +1,785 @@
+@charset "UTF-8";
+/* 아주 옅은 연보라색: #ECEEFF *//* 살짝 더 짙은 연보라색: #CCCCFF */
+/* 로고의 밝은 보라색 #6672FF *//* 로고의 옅은 하늘색 #BCECFF*/
+/* 형광 연보라 #ac8bef *//* 형광 하늘 #2ddbdc */
+/* 연노랑색 #FFFFCC *//* 연하늘색 #C8F9FE */
+
+/*폰트 설정*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Nanum+Gothic&family=Roboto&display=swap');
+*{
+	margin: 0; /*마진 값 초기화*/
+	padding: 0; /*패딩 값 초기화*/
+	box-sizing: border-box; /*박스 영역은 테두리까지 적용 */
+	font-family: 'IBM Plex Sans KR','Nanum Gothic','Arial';
+}
+/*1.3.1 탑메뉴*/
+ul {
+	list-style:none; /*서브 메뉴의 불릿을 없앤다*/
+}
+/*컨테이너: 전체 사이트 영역을 포함한다.*/
+#container {
+	margin: 0 auto; /*화면 중앙에 배치*/
+	width: 1200px; /*너비 지정*/
+}
+/*==================================================================*/
+/*1. 헤더 영역 (로고, 로그인, 회원가입, ENGLISH, 오늘의 날씨, 네비게이션(메뉴)을 포함한다. */
+header {
+	width: 100%; /*너비*/
+	height: 50px; /*높이*/
+/*	background:linear-gradient(45deg,#FFFFCC , #C8F9FE );*/ /*색상 넣는 건 생각중*/
+}
+	/*1.1 로고 영역 */
+	#logo {
+		padding-top:5px;
+		float: left;
+		width: auto; /*너비*/
+		height: 50px; /*높이*/
+}
+/*로고 이미지*/
+#logo img {
+		float: left;
+		width: 170px; /*너비*/
+		height: auto; /*높이*/
+		margin:0;
+		
+}
+/*==================================================================*/
+	/*1.2 로그인, 회원가입, ENGLISH, 오늘의 날씨 */
+		#login > ul > li {
+		text-align:center;
+		width: 65px; /*너비*/ height: 20px; 
+		border: solid 1px #ECEEFF ; 	border-radius:10px;
+		float: right;text-decoration:none;display:inline;
+		font-size:12px;
+		padding:10x;
+		margin: 5px 0 0 0;
+		background-color:white;opacity:0.8;
+	} 
+		#login > ul > li >a{
+			display:block; /*링크 텍스트는 블록으로*/
+			color: navy; /*폰트 색상*/
+			/*font-weight: 폰트 굵기*/
+			/*text-shadow: 0 1px #07c; /*그림자 추가*/
+			text-decoration:none; /*밑줄을 없앤다*/
+			/*padding: 패딩 지정*/ 
+	}
+/* 오늘의 날씨 (위젯) 
+#weather{float: right;} */
+/*==================================================================*/
+	/*1.3 네비게이션 (메뉴) 영역 : 총 6개의 메뉴 */
+.con {z-index:9999;max-width: 1200px;margin: 0;padding-top:10px;
+color:navy;}
+
+/* 메뉴 하단 줄 */
+.row::after {content: ""; display: block; clear: both;}
+
+/* 전체 바*/
+.cell {float: left; box-sizing: border-box;}
+
+.main {
+    background-color: white;
+    position: relative; 
+    left: 50%; /*왼  위치*/
+    width: 100%; /* 크기 */
+    transform: translateX(-50%); 
+    display:flex;flex-direction:row;
+}
+
+/* 각 6개의 칸*/
+.main > .menu  > ul > li {width: 200px;position: relative;}
+
+/* 각각의 메인 메뉴, 세부 메뉴*/
+.main > .menu  ul > li a {display: block;text-align: center;text-decoration: none;}
+
+.main .menu ul ul {
+    height: 0;
+    overflow-y: hidden;
+    transition: all .5s;
+    transform: translateY(-40px); 
+    opacity: 0; /*제일 상단 줄이 안 보인다.*/
+	border:solid 1px #ECEEFF;
+}
+.row{position:absolute;}
+
+		/* (여기가 중요! ) 세부 메뉴 크기 조정 */
+.main .menu  > ul:hover ul {
+font-size:17px;height: 150px;/* (중요!)세로 길이 조절*/
+transform: translateX(0);
+background-color:white;
+opacity:.8;} /*텍스트가 보인다. */
+
+		/* 상단 메인 메뉴만 (텍스트 크기 조정 가능) */
+.main > .menu  > ul > li > a {
+color: navy; text-decoration: none; 
+font-size: 21px; font-weight:bold;
+margin-bottom: 10px; }
+
+/* 전체 각각의 칸 */
+.main > .menu  > ul > li > ul > li > a {color: navy; margin: 15px;} /*세부 메뉴 폰트 변경*/
+
+/* 상단, 세부 메뉴 눌렀을 때 효과 */
+.main > .menu  ul > li:hover > a {text-decoration: none; color:#6672FF}
+/*==================================================================*/
+
+ /*#totalSlides{   background:linear-gradient(45deg,#FFFFCC , #C8F9FE );
+ border-radius:10px 10px 35px 35px;
+ border:dotted red;
+ width:1200px;}
+ 
+ 		 /*2.  커다란 첫번째 이미지 슬라이드 쇼 영역*/
+  .wrap ul,ol,li {list-style:none;}
+  .wrap a{text-decoration:none;}
+  .wrap{top:42px;margin-bottom:40px;width:100%;height:530px;
+  overflow:hidden;position:relative;z-index:0;
+  box-sizing:border-box;border-radius: 15px 15px 0 0;
+  background:linear-gradient(45deg,#FFFFCC , #C8F9FE );
+/*  background:linear-gradient(45deg,#FFFFCC , #DEFBFF ); /*전체 배경 색상*/
+  }/*원래 #ac8bef , #2ddbdc 중간버전 #B099F1 , #C8F9FE 옅음 버전 #E2C4FF,#CAFFFF*/
+  
+  
+ 				 /*슬라이드 쇼 내의 타이틀과 내용*/
+  .wrap .con h3{font-size:21px;}
+  .wrap .con p{font-size:14px;}
+  
+  				/*슬라이드쇼 좌측 상단의 울주군 Ulju-gun 문자 (한글+영어)*/
+  .wrap h1{
+  font-size:14px;font-weight:normal;
+  font-family:'IBM Plex Sans KR'; color:#6672FF ;
+  letter-spacing:1px;position:absolute;left:10px;top:10px;}
+ 
+  .wrap h1 span{opacity:0.8;font-family:'IBM Plex Sans KR'}
+  
+  .wrap h2{
+  font-size:12px;font-weight:normal;
+  font-family:"orbitron"; color:#6672FF;
+  letter-spacing:1px;position:absolute;left:10px;top:30px;}
+ 
+  .wrap h2 span{opacity:0.8;font-family:"orbitron"}
+  
+  	  /*재생, 일시정지 버튼 */
+ .wrap .auto{position:absolute;bottom:10px;left:20px;}
+ .wrap .auto li{float:left;margin-right:20px; cursor:pointer;
+  color:#BCECFF ;font-size:20px;opacity:0.9;transition:all 0.5s;}
+ .wrap .auto li:hover{opacity:1;transform:scale(1.4);}/*마우스 호버 시 진해지면서 1.4배 확대*/
+
+  		/*< > 좌우 버튼, 페이지네이션 스타일 변경*/
+  .wrap .swiper-button-prev{left:auto;/*기존 left값 초기화*/
+  right:610px;top:auto;bottom:5px;
+  filter:grayscale(50%) brightness(10);/*버튼 색을 흰색으로 변경*/
+  transform:scale(0.7);}
+  .wrap .swiper-button-next{left:auto;/*기존 left값 초기화*/
+  right:560px;top:auto;bottom:5px;
+  filter:grayscale(50%) brightness(10);/*버튼 색을 흰색으로 변경*/
+  transform:scale(0.7);}
+  
+  		/* 슬라이드 6장 */
+  		/*전체 칼라 배경 */
+  .wrap .swiper-wrapper{width:100%;height:380px;}
+  		/*안의 흰색 슬라이드 배경*/
+  .wrap .swiper-wrapper .swiper-slide{width:850px;height:420px;
+  position:relative;top:50%;margin-top:-130px;}
+  .wrap .swiper-wrapper .swiper-slide .inner{width:100%;height:100%;
+  background:#fff;padding:30px;box-sizing:border-box;opacity:0.9;transition:1s;}
+  		/*원본 이미지 크기: 1000*380*/
+#image{bottom:13px;right:5px;width:800px; height:auto; position:relative;}
+
+		/*숫자 넘김  버튼*/
+.swiper-pagination-fraction{
+	/*position:relative;*/
+	bottom:10px; /*기존 bottom값 초기화*/
+	top:auto;
+	left:auto;/*기존 left값 초기화*/
+	right:10px;
+	width:auto;/*기존 width값 초기화*/
+	font-size:16px; font-family:"orbitron";letter-spacing:1px;color:#6672FF;opacity:0.8;
+}
+.swiper-pagination-fraction span:nth-of-type(1){
+	font-size:18px;}/*첫번째 숫자를 크게 한다.*/
+
+/*가운데 패널*/
+.wrap .swiper-wrapper .swiper-slide-active .inner{/*.swiper-slide-active: 가운데 위치한 패널*/
+	opacity:1;
+	box-shadow:0px 0px 50px rgba(255,255,255,0.8); /*박스가 밝게 빛나는 효과*/
+}
+.wrap .swiper-wrapper .swiper-slide .inner::before,
+.wrap .swiper-wrapper .swiper-slide .inner::after{/*좌우 패널*/
+content: "";
+display:block;
+width:100%;
+height:100%;
+position:absolute;
+top:0px;
+left:0px;
+opacity:0;
+background:#fff;
+}
+/*
+.wrap .swiper-wrapper .swiper-slide-prev .inner,
+.wrap .swiper-wrapper .swiper-slide-next .inner{
+	opacity:0.8;
+}*/
+/*=================================================================*/
+
+	/*2.1두번째 작은 이미지 슬라이드 쇼 영역*/
+	#secondTravelSlides{
+	width:1200px;height:320px; /*높이*/
+	/*display:flex; flex-direction: row;*/
+	
+}
+/* 왼쪽 슬라이드 쇼 (여행 설명) */
+#leftTravelSlides{
+	float:left;
+	background:linear-gradient(135deg,#FFFFCC , #DFFBEE); /*전체 네모 배경 조정 위 배경 색상과 똑같게 됨*/
+	/*border-radius: 0 0 0 45px; /*왼쪽 하단 둥그랗게*/
+}
+/* 오른쪽 슬라이드 쇼 (여행 설명) */
+#rightTravelSlides{
+	float:right; 
+	background:linear-gradient(45deg, #E0FBEE, #EBFDE1, #DFFBEE); /*전체 네모 배경 조정 위 배경 색상과 똑같게 됨*/
+	/*border-radius: 0 0 45px 0; /*왼쪽 하단 둥그랗게*/
+}
+/*=================================================================*/
+	/* 전체  배경 조정 */ 
+.blog-slider {	
+	width: 600px;  height: 320px;
+  position: relative;
+  /*max-width: 800px;*/
+  margin: auto;  padding: 25px;
+    /* 45, 135, 225, 315 */
+ /* background:linear-gradient(135deg,#FFFFCC , #DFFBEE); /*전체 네모 배경 조정 위 배경 색상과 똑같게 됨*/
+/*background:linear-gradient(45deg,#F5FEE7, #fff );  */
+ /*background:linear-gradient(45deg,#FFFFCC, #fff );/*background: #fff;*/
+  /*box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);*/
+  /*border-radius: 25px;*/
+/*border-radius: 0 0 0 25px;*/ /*왼쪽 하단 둥그랗게*/
+  transition: all .3s;
+}
+@media screen and (max-width: 992px) {
+  .blog-slider {
+    max-width: 680px;
+    height: 400px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .blog-slider {
+    min-height: 500px;
+    height: auto;
+    margin: 180px auto;
+  }
+}
+@media screen and (max-height: 500px) and (min-width: 992px) {
+  .blog-slider {
+    height: 350px;
+  }
+}
+.blog-slider__item {
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  .blog-slider__item {
+    flex-direction: column;
+  }
+}
+.blog-slider__item.swiper-slide-active .blog-slider__img img {
+  opacity: 1;
+  transition-delay: .3s;
+}
+.blog-slider__item.swiper-slide-active .blog-slider__content > * {
+  opacity: 1;
+  transform: none;
+}
+.blog-slider__item.swiper-slide-active .blog-slider__content > *:nth-child(1) {
+  transition-delay: 0.3s;
+}
+.blog-slider__item.swiper-slide-active .blog-slider__content > *:nth-child(2) {
+  transition-delay: 0.4s;
+}
+.blog-slider__item.swiper-slide-active .blog-slider__content > *:nth-child(3) {
+  transition-delay: 0.5s;
+}
+.blog-slider__item.swiper-slide-active .blog-slider__content > *:nth-child(4) {
+  transition-delay: 0.6s;
+}
+.blog-slider__item.swiper-slide-active .blog-slider__content > *:nth-child(5) {
+  transition-delay: 0.7s;
+}
+.blog-slider__item.swiper-slide-active .blog-slider__content > *:nth-child(6) {
+  transition-delay: 0.8s;
+}
+.blog-slider__item.swiper-slide-active .blog-slider__content > *:nth-child(7) {
+  transition-delay: 0.9s;
+}
+.blog-slider__item.swiper-slide-active .blog-slider__content > *:nth-child(8) {
+  transition-delay: 1s;
+}
+.blog-slider__item.swiper-slide-active .blog-slider__content > *:nth-child(9) {
+  transition-delay: 1.1s;
+}
+.blog-slider__item.swiper-slide-active .blog-slider__content > *:nth-child(10) {
+  transition-delay: 1.2s;
+}
+.blog-slider__item.swiper-slide-active .blog-slider__content > *:nth-child(11) {
+  transition-delay: 1.3s;
+}
+.blog-slider__item.swiper-slide-active .blog-slider__content > *:nth-child(12) {
+  transition-delay: 1.4s;
+}
+.blog-slider__item.swiper-slide-active .blog-slider__content > *:nth-child(13) {
+  transition-delay: 1.5s;
+}
+.blog-slider__item.swiper-slide-active .blog-slider__content > *:nth-child(14) {
+  transition-delay: 1.6s;
+}
+.blog-slider__item.swiper-slide-active .blog-slider__content > *:nth-child(15) {
+  transition-delay: 1.7s;
+}
+
+		/* 정사각형 투어 사진 이미지 조정 */ 
+.blog-slider__img {
+  width: 280px;  height: 280px;
+  flex-shrink: 0; /*The element will not shrink*/
+  /* 아주 옅은 연보라색: #ECEEFF *//* 살짝 더 짙은 연보라색: #CCCCFF */
+  /* 연노랑색 #FFFFCC *//* 연하늘색 #C8F9FE */
+  /* 45, 135, 225, 315 */
+ /*마우스 돌릴 때 효과*/
+ 
+  background-image:linear-gradient(225deg,#FFFFCC, #C8F9FE ); /*두번째 슬라이드 배경 색상*/
+  /* background-image: linear-gradient(147deg, #E5FFCC 0%, #C8F9FE 74%);/*이미지 뒷면 필터*/
+  /*background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);/*이미지 뒷면 필터*/
+    /*box-shadow: 0 13px 30px 0  rgba(255,255,153, 0.2); /*그림자 효과*/
+ /*box-shadow: 0 13px 30px 0  rgba(204, 255, 255, 0.2); /*그림자 효과*/
+  /*  box-shadow: 4px 13px 30px 1px rgba(252, 56, 56, 0.2);*/
+  border-radius: 50px;
+  transform: translateX(-12px); /*  transform: translateX(-80px); */
+  overflow: hidden;
+  margin:3px;
+  border:solid 0.5px #C8F9FE;
+}
+		/* 마우스 올렸을 때 이미지가 커진다.*/
+img {
+  max-width: 100%;
+}
+.blog-slider__img {
+   width: 280px;
+   margin: 0px auto;
+   overflow: hidden;
+}
+      
+.blog-slider__img img {
+  	transition: all 0.2s linear;
+}
+.blog-slider__img:hover img {
+  	transform: scale(1.5); /*확대 배수*/
+}
+		
+		
+.blog-slider__img:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+ /* background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);*/ /*이미지 필터 덮는다*/
+  border-radius: 20px;
+  opacity: 0.8;
+}
+.blog-slider__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  border-radius: 20px;
+  transition: all .3s;
+}
+@media screen and (max-width: 768px) {
+  .blog-slider__img {
+    transform: translateY(-50%);
+    width: 90%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog-slider__img {
+    width: 95%;
+  }
+}
+@media screen and (max-height: 500px) and (min-width: 992px) {
+  .blog-slider__img {
+    height: 270px;
+  }
+}
+
+		/*텍스트를 감싸는 전체 흰색 배경 */
+.blog-slider__content {
+  padding: 15px 10px 15px 5px;
+  background:#fff; opacity:0.8;
+  border-radius: 50px; 
+  height:280px;/*고정된 높이*/
+}
+@media screen and (max-width: 768px) {
+  .blog-slider__content {
+    margin-top: -80px;
+    text-align: center;
+    padding: 0 30px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog-slider__content {
+    padding: 0;
+  }
+}
+.blog-slider__content > * {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all .4s;
+}
+		/* 투어 작은 텍스트 제목*/
+.blog-slider__code {
+  color: #807CA6;/*#7b7992;*/
+  text-align:center;
+  margin-bottom: 10px;
+  display: block;
+  font-weight: 500;
+  font-size:14px;
+}
+		/* 투어 텍스트 제목 */
+.blog-slider__title {
+	text-align:center;
+  font-size: 21px;
+  font-weight: 700;
+  /*color: #0d0925;*/
+  color: navy;
+  margin-bottom: 15px;
+}
+			/* 투어 설명 텍스트 내용 */
+.blog-slider__text {
+	color:navy;
+/*	color:#6672FF ;*/
+/*  color: #4e4a67;*/
+ margin: 0 0 30px 5px;
+  line-height: 1.5;
+  text-align:justify;
+  font-size: 14px;
+   padding:10px; 
+}
+
+			/*자세히 알아보기 버튼*/
+.blog-slider__button {
+  font-size:13px;
+  color: navy;/*#ac8bef;*//*color: #fff;*/
+  /*box-shadow: 0px 14px 80px rgba(252, 56, 56, 0.4);*/ /*그림자 효과*/
+  text-decoration: none;
+  font-weight: bold; /*500*/
+  text-align: center;
+  letter-spacing: 1px;
+  	
+  background:linear-gradient(135deg,#E5FFCC 20%, #BCECFF 74%);
+  /*background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);*/
+  padding: 8px 18px; /* padding: 15px 35px; */
+  margin: 0 0 0 60px; /*위치 조정*/
+  border-radius: 50px;   
+  border:solid 0.5px #C8F9FE;/*border:1px solid #fff;*/
+  
+  display: inline-flex;
+  justify-content: center;
+}
+@media screen and (max-width: 576px) {
+  .blog-slider__button {
+    width: 100%; 
+  }
+}
+.blog-slider .swiper-container-horizontal > .swiper-pagination-bullets, .blog-slider .swiper-pagination-custom, .blog-slider .swiper-pagination-fraction {
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+}
+			/* 동그라미  . . 버튼 */ 
+.blog-slider__pagination { 
+  position: absolute;
+  z-index: 21;
+  right: 435px; left: auto !important;  /*좌우 이동*/
+  width: 11px !important;
+  text-align: center;
+   top: 250px; bottom: 0 !important;
+  transform: rotate(270deg);
+}
+@media screen and (max-width: 768px) {
+  .blog-slider__pagination {
+    transform: translateX(-50%);
+    left: 50% !important;
+    top: 205px;
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.blog-slider__pagination.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 8px 0;
+}
+@media screen and (max-width: 768px) {
+  .blog-slider__pagination.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 5px;
+  }
+}
+.blog-slider__pagination .swiper-pagination-bullet {
+  width: 11px;
+  height: 11px;
+  display: block;
+  border-radius: 10px;
+  background: #eee;/*진회색 #062744*/
+  opacity: 0.8;
+  transition: all .3s;
+}
+/*동그라미 버튼 . . 색상*/
+.blog-slider__pagination .swiper-pagination-bullet-active {
+  opacity: .8;
+ background:#BCECFF;/*보라색 #6672FF; /* background: #fd3838; */
+  /*height: 10px;*/ /*height: 30px;*/ /*동그란 원으로 바뀜*/
+  box-shadow: 0px 0px 20px rgba(252, 56, 56, 0.3);
+  bottom:10px;
+ 
+}
+@media screen and (max-width: 768px) {
+  .blog-slider__pagination .swiper-pagination-bullet-active {
+    height: 11px;
+    width: 30px; 
+  } 
+}
+/*==================================================================*/
+		/*3. 총 6장의 가로형 카드들*/
+/*위로 올라오는 슬라이드 효과*/		
+:root {
+  --d: 700ms;
+  --e: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+#links{
+	display:table;
+	width: 1200px; /*너비*/ height:260px; /*높이*/
+	background:linear-gradient(45deg,#FFFFCC , #E0FBED, #E7FCE5);
+	border-radius: 0 0 45px 45px;
+	padding:0 0 10px 0;
+}
+
+/* 왼쪽 슬라이드 쇼 (여행 설명) */
+/*#leftCardSlides{
+   display: flex;
+   width:600px;
+	background:linear-gradient(135deg,#FFFFCC , #DFFBEE); /*전체 네모 배경 조정 위 배경 색상과 똑같게 됨*/
+	/*border-radius: 0 0 0 45px; /*왼쪽 하단 둥그랗게*/
+/*}
+/* 오른쪽 슬라이드 쇼 (여행 설명) */
+/*#rightCardSlides{
+  display: flex;
+   width:600px;
+	background:linear-gradient(45deg, #E0FBE
+
+
+/* 6장 카드의 카드 높이, 너비 */
+.page-content {
+	/*6장이 가로로 정렬됨*/
+  display: flex; /*display: grid;*/ 
+  grid-gap: 1rem;
+  padding: 1rem;
+  width: 1200px; /*max-width: 1200px;*/
+  margin: 0 auto;
+  font-family: var(--font-sans);
+}
+@media (min-width: 600px) {
+  .page-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 800px) {
+  .page-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+	/* 각각의 카드 */
+.card {
+  border-radius:60px; /*카드의 모서리 둥글게*/
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  color: whitesmoke;
+  background-color: whitesmoke;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 600px) {
+  .card {
+    height: 220px; /*카드의 높이 조정*/
+  }
+}
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  background-size: cover;
+  background-position: 0 0;
+  transition: transform calc(var(--d) * 1.5) var(--e);
+  pointer-events: none;
+}
+.card:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  pointer-events: none;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);
+  transform: translateY(-50%);
+  transition: transform calc(var(--d) * 2) var(--e);
+}
+				/*각 카드의 이미지*/
+.card:nth-child(1):before {/*교통: 시티투어*/
+  background-image: url(https://i.imgur.com/eYJbxHK.jpg); 
+}
+.card:nth-child(2):before {/*숙박: 오션뷰 호텔*/
+  background-image: url(https://i.imgur.com/MPxCygG.jpg);
+}
+.card:nth-child(3):before {/*음식: 언양불고기*/
+  background-image: url(https://i.imgur.com/3eNIzp4.jpg);
+  background-position:7.1cm;
+}
+.card:nth-child(4):before {/*축제 대회: 서머페스티벌*/
+  background-image: url(https://i.imgur.com/UmYABpx.jpg);
+  background-position: 7cm;
+  
+}
+.card:nth-child(5):before {/*전시관 박물관: 울산 전시컨벤션센터*/
+  background-image: url(https://i.imgur.com/kGD5o71.jpg);
+}
+.card:nth-child(6):before {/*레저 스포츠: 클라이밍체험*/
+  background-image: url(https://i.imgur.com/Vuwhz3s.jpg);
+  background-size: 300px;
+  background-position: 6.5cm;
+}
+
+/* 전체 글자들 */
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  transition: transform var(--d) var(--e);
+  z-index: 1;
+}
+.content > * + * {
+  margin-top: 1rem;
+}
+
+		/* 타이틀 */
+.title {
+  font-size: 23px;
+  font-weight: bold;
+  line-height: 1.2;
+  padding:30px 0 0 0;
+  width:200px;
+  text-shadow: 1px 1px 2px black;
+}
+
+	/* 내부 설명글 */
+.copy {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  /*font-style: italic;*/
+  text-align: center;
+  line-height: 1.35;
+  width:160px;
+  text-shadow: 1px 1px 2px black;
+}
+/* 알아보기 버튼 */
+.btn {
+  cursor: pointer;
+  margin-top: 1.5rem;
+  /*padding: 0.75rem 1.5rem;*/
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  border: none;
+}
+.btn:hover {
+  background-color: #0d0d0d;
+}
+.btn:focus {
+  outline: 1px solid #C8F9FE;
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (min-width: 600px) {
+  .card:after {
+    transform: translateY(0);
+  }
+
+  .content {
+    transform: translateY(calc(100% - 4.5rem));
+  }
+  .content > *:not(.title) {
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+  }
+
+  .card:hover,
+.card:focus-within {
+    align-items: center;
+  }
+  .card:hover:before,
+.card:focus-within:before {
+    transform: translateY(-4%);
+  }
+  .card:hover:after,
+.card:focus-within:after {
+    transform: translateY(-50%);
+  }
+  .card:hover .content,
+.card:focus-within .content {
+    transform: translateY(0);
+  }
+  .card:hover .content > *:not(.title),
+.card:focus-within .content > *:not(.title) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc(var(--d) / 8);
+  }
+
+  .card:focus-within:before, .card:focus-within:after,
+.card:focus-within .content,
+.card:focus-within .content > *:not(.title) {
+    transition-duration: 0s;
+  }
+}
+
+/*==================================================================*/
+/*4. 푸터 영역*/
+footer{
+	display: inline; vertical-align : bottom; /*최하단 위치*/
+	position:relative; 
+	width: 1200px; /*너비*/
+	text-align:center;line-height:15px;
+	font-size:12px;
+	color: navy; /*#4F1689*//*#404040*/
+	
+}
+/*==================================================================*/
