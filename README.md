@@ -7,10 +7,13 @@ The main reason why I made this project is to introduce my hometown.
 </pre>
 
 Main page
-<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbhFBAG%2Fbtr7iJqp6y7%2FD8FY0DphUMEjSHkbF55CF1%2Fimg.png">
+![image](https://blog.kakaocdn.net/dn/b5OduM/btr96OWhCKQ/KkpxZfbOepVSRaXJqjX7K1/img.png)
+![image](https://blog.kakaocdn.net/dn/cl8zRi/btr9WaAmutC/1911JJBfEPXIGqSOyBUeN0/img.png)
+![image](https://blog.kakaocdn.net/dn/bmrE6m/btr96PHEHUE/i0e3TfgSqfFo0JlTJxcqkK/img.png)
+![image](https://blog.kakaocdn.net/dn/qD18S/btr91SFGZlS/nZoDApJtgiCeTwQCN612E0/img.png)
 
 Registration page
-![image](https://user-images.githubusercontent.com/124529023/231778261-795d468f-117e-4769-a743-2e0fb78e5c05.png)
+![image](https://blog.kakaocdn.net/dn/ZexN1/btr93oxdnye/zpp5YvTqryYG1vEJOEsyNk/img.png)
 
 Login page
-![image](https://user-images.githubusercontent.com/124529023/231778362-a5ea95f2-3ba9-4f03-824a-317211e62cc4.png)
+![image](https://blog.kakaocdn.net/dn/cezUig/btr95poQi4D/huqTqZHr9t3qDkKmnleJq0/img.png)
