@@ -6,6 +6,10 @@ There are main, login, and registration pages.
 The main reason why I made this project is to introduce my hometown.
 </pre>
 
+<pre>
+Frontend: HTML, CSS, Vanilla JS, jQuery
+</pre>
+
 Main page
 ![image](https://user-images.githubusercontent.com/124529023/231866201-f72e7a01-841e-421b-80e4-5ac6a955b012.png)
 ![image](https://user-images.githubusercontent.com/124529023/231866220-705176a6-494d-4d82-bf15-f88c8a319741.png)
