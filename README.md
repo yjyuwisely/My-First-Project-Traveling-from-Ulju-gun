@@ -27,7 +27,6 @@ The login page allows users to log in to their account.
 <h3>Registration Page</h3>
 The registration page allows new users to create an account. 
 <br><br>
-Overall, this project demonstrates my proficiency in a range of frontend technologies, and it serves as a testament to my abilities as a developer.
 
 <h2>Page Screenshots</h2>
 Here's a screenshot of the main page:
@@ -45,3 +44,6 @@ Here's a screenshot of the main page:
 
 <h3>Login Page Screenshot</h3>
 <img src="https://user-images.githubusercontent.com/124529023/231866347-9cd19ecd-bcc2-47e2-8082-ee8c2796d62e.png">
+
+<hr>
+Overall, this project demonstrates my proficiency in a range of frontend technologies, and it serves as a testament to my abilities as a developer.
