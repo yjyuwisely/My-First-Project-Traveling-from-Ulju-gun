@@ -2,6 +2,7 @@
 This project was developed from January 25, 2023, to February 10, 2023.
 
 <h2>Project Overview</h2>
+<p align="justify">
 The project is about day trips from Ulju-gun, which is my hometown. The goal of this project is to introduce visitors to the beautiful sights and attractions in Ulju-gun, and to encourage them to explore the area.
 <br><br>
 The project consists of three pages:
@@ -19,16 +20,19 @@ The project consists of three pages:
 
 <h2>Page Details</h2>
 <h3>Main Page</h3>
-The main page is the centerpiece of the project, and it provides an overview of Ulju-gun and its top attractions. 
+<p align="justify">
+The main page is the centerpiece of the project, and it provides an overview of Ulju-gun and its top attractions. </p>
 
 <h3>Login Page</h3>
-The login page allows users to log in to their account. 
+<p align="justify">
+The login page allows users to log in to their account. </p>
 
 <h3>Registration Page</h3>
-The registration page allows new users to create an account. 
+<p align="justify">
+The registration page allows new users to create an account. </p>
 <br><br>
-
-Overall, this project demonstrates my proficiency in a range of frontend technologies, and it serves as a testament to my abilities as a developer.
+<p align="justify">
+Overall, this project demonstrates my proficiency in a range of frontend technologies, and it serves as a testament to my abilities as a developer.</p>
 
 <h2>Page Screenshots</h2>
 Here's a screenshot of the main page:
