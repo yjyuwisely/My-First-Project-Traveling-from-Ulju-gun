@@ -30,7 +30,7 @@ The login page allows users to log in to their account. </p>
 <h3>Registration Page</h3>
 <p align="justify">
 The registration page allows new users to create an account. </p>
-<br><br>
+<br>
 <p align="justify">
 Overall, this project demonstrates my proficiency in a range of frontend technologies, and it serves as a testament to my abilities as a developer.</p>
 
